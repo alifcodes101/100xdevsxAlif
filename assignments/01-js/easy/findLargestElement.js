@@ -6,13 +6,20 @@
 */
 
 function findLargestElement(numbers) {
-    let biggestElement = numbers[0];
-    for (let i = 0; i < numbers.length; i++) {
-        if (numbers[1] > biggestElement) {
-            biggestElement = numbers[i];
+    // checks the array
+    if (numbers.length === 0) {
+        return undefined;
+    }
+    // assume first element is largest
+    let largest = numbers[0];
+    // tnis will iterate through the input list
+    for (let i=1; i<numbers.length; i++) {
+        // this will update the current number to greater
+        if (numbers[i] > largest){
+            largest = numbers[i];
         }
     }
-    return biggestElement;
+    return largest;
 }
 
 module.exports = findLargestElement;
